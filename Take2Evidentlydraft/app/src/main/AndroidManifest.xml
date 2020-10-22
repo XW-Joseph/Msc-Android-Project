@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.beckettjs.take2evidentlydraft">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission-sdk-23 android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" /> <!-- may not be required, if so check camera exists before use -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".CaseObjectListActivity"
+            android:label="@string/title_caseobject_list"
+            android:parentActivityName=".SelectionActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.beckettjs.take2evidentlydraft.SelectionActivity" />
+        </activity>
+        <activity
+            android:name=".CaseObjectDetailActivity"
+            android:label="@string/title_caseobject_detail"
+            android:parentActivityName=".CaseObjectListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.beckettjs.take2evidentlydraft.CaseObjectListActivity" />
+        </activity>
+        <!-- <activity android:name=".widgetActivity"></activity> -->
+        <activity android:name=".EvdDetailView">
+<!--            <intent-filter-->
+<!--                tools:ignore="AppLinkUrlError">-->
+<!--                <action android:name = "android.intent.action.VIEW" />-->
+<!--                <data android:type = "image/*"/>-->
+<!--                <data android:type = "application/ogg"/>-->
+<!--                <category android:name="android.intent.category.DEFAULT"/>-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".EvidenceViewActivity"
+            android:label="@string/title_activity_evidence_view"
+            android:parentActivityName=".CaseOverviewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.beckettjs.take2evidentlydraft.CaseOverviewActivity" />
+        </activity>
+        <activity
+            android:name=".CaseOverviewActivity"
+            android:label="@string/title_activity_case_overview"
+            android:launchMode="singleTask"
+            android:parentActivityName=".SelectionActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.beckettjs.take2evidentlydraft.SelectionActivity" />
+        </activity>
+        <activity
+            android:name=".SelectionActivity"
+            android:label="@string/title_activity_selection"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.beckettjs.take2evidentlydraft.MainActivity" />
+        </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <service
+            android:name=".widgetActivity"
+            android:enabled="true"
+            android:exported="false"
+            android:screenOrientation="user" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.beckettjs.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

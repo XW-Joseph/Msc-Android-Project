@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">screen path test</string>
+    <string name="gotoapp">Proceed!</string>
+    <string name="add2last">Add to last case</string>
+    <string name="addtonewcase">Add to new case</string>
+    <string name="gotolastcase">To last case</string>
+    <string name="title_evidenceobject_list">Evidences</string>
+    <string name="title_evidenceobject_detail">EvidenceObject Detail</string>
+</resources>

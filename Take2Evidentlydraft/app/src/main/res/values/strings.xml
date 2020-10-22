@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Take2 Evidentlydraft</string>
+    <string name="title_activity_selection">SelectionActivity</string>
+    <string name="title_activity_case_overview">CaseOverviewActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_evidence_view">EvidenceViewActivity</string>
+    <string name="add_mod_case_story">add to or edit case story</string>
+    <string name="title_caseobject_list">Cases</string>
+    <string name="title_caseobject_detail">CaseObject Detail</string>
+</resources>
